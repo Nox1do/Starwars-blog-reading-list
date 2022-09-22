@@ -1,24 +1,25 @@
 import React from "react";
-import "../../styles/home.css";
 import { BsHeart } from 'react-icons/bs';
-
+import "../../styles/home.css";
 
 export const Home = () => (
-	//card
-	<div className="card mx-4" style={{ width: "18rem" }}>
+	<div className="card mx-3" style={{ width: "18rem" }}>
   <img src="https://fakeimg.pl/400x200/" className="card-img-top" alt="..." />
   <div className="card-body">
-    <h5 className="card-title">Card title</h5>
+    <h5 className="card-title">Luke Skywalker</h5>
     <p className="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      Genre: Male <br/>
+	  Hair Color: blond <br/>
+	  Eye Color: blue <br/>
     </p>
-<div className="d-flex justify-content-between">
-	<a href="#" class="btn btn-outline-primary">learn more!</a>
-	<a href="#" class="btn btn-outline-warning "><BsHeart color="orange" /></a>
-    
-</div>
-	
+	<div className="d-flex justify-content-between pb-2 ">
+    <a href="#" className="btn btn-outline-primary">
+      Learn More!
+    </a>
+    <a href="#" className="btn btn-outline-warning">
+      <BsHeart color="orange" />
+    </a>
+	</div>
   </div>
 </div>
 );
