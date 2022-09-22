@@ -7,12 +7,12 @@ export const Navbar = () => {
       <Link to="/">
         <span className="navbar-brand mb-0 h1">
           <a class="navbar-brand mx-5" href="#">
-            <img
-              src="https://www.kindpng.com/picc/m/27-270569_transparent-star-wars-logo-png-star-wars-png.png"
-              alt="Bootstrap"
-              width="50"
-              height="35"
-            />
+            <img src="https://www.kindpng.com/picc/m/27-270569_transparent-star-wars-logo-png-star-wars-png.png" 
+  alt="Bootstrap"
+  width={50}
+  height={35}
+/>
+
           </a>
         </span>
       </Link>
