@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { BsHeart } from 'react-icons/bs';
 
 
-   export const Card = () => {
+   export const Card = (type) => {
 return (
 	<div className="card mx-3" style={{ width: "18rem" }}>
   <img src="https://fakeimg.pl/400x200/" className="card-img-top" alt="..." />
@@ -15,10 +15,10 @@ return (
 	  Eye Color: blue <br/>
     </p>
 	<div className="d-flex justify-content-between pb-2 ">
-    <Link to='/demo' className="btn btn-outline-primary">
+    <Link to={() => type === '/Planets' ? '/Characters': '/Planets' } className="btn btn-outline-primary">
       Learn More!
     </Link>
-    <Link to='/demo' className="btn btn-outline-warning">
+    <Link to='/Planets' className="btn btn-outline-warning">
       <BsHeart color="orange" />
     </Link>
 	</div>
