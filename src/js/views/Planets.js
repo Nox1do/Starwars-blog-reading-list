@@ -6,15 +6,16 @@ import React from 'react';
    export const Planets = () => {
 return (
 <>
-	<div class="container py-4 d-flex">
+<div className="container py-4 d-flex">
     
 
-    <div class=" mb-4 bg-light ">
-      <div class="container-fluid">
+    <div className=" mb-4 bg-light ">
+      <div className="container-fluid">
         
-        <p class="col-md-8 fs-4"><img src='https://www.gammaracionero.es/wp-content/uploads/2016/09/placeholder-800x600.png' alt="Bootstrap"
+        <div className="col-md-8 fs-4"><img src='https://www.gammaracionero.es/wp-content/uploads/2016/09/placeholder-800x600.png' alt="Bootstrap"
             width={500}
-            height={300}/></p>
+            height={300} />
+            </div>
        
       </div>
     </div>
@@ -28,6 +29,7 @@ return (
     </div>
 
   </div>
+  </div>
 </>
 )
-};
+}
