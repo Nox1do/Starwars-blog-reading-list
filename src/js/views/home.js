@@ -1,25 +1,32 @@
 import React from "react";
-import { BsHeart } from 'react-icons/bs';
 import "../../styles/home.css";
+import Card from "./card";
 
 export const Home = () => (
-	<div className="card mx-3" style={{ width: "18rem" }}>
-  <img src="https://fakeimg.pl/400x200/" className="card-img-top" alt="..." />
-  <div className="card-body">
-    <h5 className="card-title">Luke Skywalker</h5>
-    <p className="card-text">
-      Genre: Male <br/>
-	  Hair Color: blond <br/>
-	  Eye Color: blue <br/>
-    </p>
-	<div className="d-flex justify-content-between pb-2 ">
-    <a href="#" className="btn btn-outline-primary">
-      Learn More!
-    </a>
-    <a href="#" className="btn btn-outline-warning">
-      <BsHeart color="orange" />
-    </a>
-	</div>
+  <>
+   <h1 className="mx-3">Characters</h1>
+  <div className=" row flex-row flex-nowrap overflow-scroll mx-2">    
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
   </div>
-</div>
+
+    <h1 className="mx-3">Planets</h1>
+  <div className=" row flex-row flex-nowrap overflow-scroll mx-2">
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+  </div>
+    
+    </>
 );
+
+
+
+
