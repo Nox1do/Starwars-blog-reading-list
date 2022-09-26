@@ -46,7 +46,7 @@ return (
   <div className=" row flex-row flex-nowrap overflow-scroll mx-2 py-2">    
   {players.map((item, index) => {
               return (
-                <Card key={index} name={item.name} type="players" id={item.uid}/>
+                <Card key={index} name={item.name} type='players' id={item.uid}/>
               );
             })}
 		</div>
@@ -57,7 +57,7 @@ return (
   <div className=" row flex-row flex-nowrap overflow-scroll mx-2">
   {planets.map((item, i) => {
               return (
-                <Card key={i} name={item.name} type="planets" id={item.uid}/>
+                <Card key={i} name={item.name} type='planets' id={item.uid}/>
               );
             })}
 		</div>

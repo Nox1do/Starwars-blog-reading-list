@@ -15,7 +15,7 @@ return (
 	  Eye Color: blue <br/>
     </p>
 	<div className="d-flex justify-content-between pb-2 ">
-    <Link to={() => props === '/Characters' ? '/Characters': '/Planets' } className="btn btn-outline-primary">
+    <Link to={() => props.type === 'players' ? `/Characters/${props.id}`: `/Planets/${props.id}` } className="btn btn-outline-primary">
       Learn More!
     </Link>
     <Link to='/Planets' className="btn btn-outline-warning">
