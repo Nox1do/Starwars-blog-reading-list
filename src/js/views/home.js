@@ -13,16 +13,30 @@ const [players, setPlayers] = useState([]);
 const [planets, setPlanets] = useState([]);
 
 //fetch
-const getCharacters = () => {
+
+//personajes
+const getPlayers = () => {
    fetch("https://www.swapi.tech/api/people/")
   .then((resp) => resp.json())
   .then((datos) => setPlayers(datos.results))
-  .catch((err) => console.error(err));
+  .catch((error) => console.log(error))
 };
+
+  //planetas
+const getPlanets = () => {
+  fetch("https://www.swapi.tech/api/planets/")
+  .then((resp) => resp.json())
+  .then((datos) => setPlanets(datos.results))
+  .catch((error) => console.log(error))
+};
+
+
+
 console.log(players.name)
 
 useEffect(()=> {
-  getCharacters();
+  getPlayers();
+  getPlanets();
 
 },[]);
 
@@ -41,7 +55,7 @@ return (
   
     <h1 className="mx-3" style={{ color: "red" }}>Planets</h1>
   <div className=" row flex-row flex-nowrap overflow-scroll mx-2">
-  {players.map((item, i) => {
+  {planets.map((item, i) => {
               return (
                 <Card key={i} name={item.name} type="planets" id={item.uid}/>
               );
