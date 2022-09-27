@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         aux.push(item);
         setStore({ favoritos: aux });
       },
-      removeFav: (item) => {
+      removeFav: (index) => {
         let aux = getStore().favoritos
         let x = aux.filter((element, i) => i != index)
         setStore({ favoritos: x });

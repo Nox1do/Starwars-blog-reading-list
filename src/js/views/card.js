@@ -4,6 +4,7 @@ import { BsHeart } from "react-icons/bs";
 import { Context } from "../store/appContext";
 import { useContext } from "react";
 
+
 export const Card = (props) => {
   const { store, actions } = useContext(Context);
   return (
@@ -19,7 +20,7 @@ export const Card = (props) => {
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">
           Genre: Male <br />
-          Hair Color: blond <br />
+          Hair Color: {store.infoCharacters.hair_color}<br />
           Eye Color: blue <br />
         </p>
         <div className="d-flex justify-content-between pb-2 ">

@@ -15,17 +15,17 @@ export const Characters = (type) => {
   }, [params?.theid]);
   return (
     <div className="d-flex m-2 justify-content-center"  >
-      <img style={{ width: "250px" }}
+      <img style={{ width: "240px", height: "300px"  }}
         src={
           "https://starwars-visualguide.com/assets/img/characters/" +
           params.theid +
           ".jpg" }
       />
 	  <div className="alert alert-warning" style={{ width: "500px",height:"300px" }} role="alert">
-	  charactername: {store.infoCharacters.name} <br /><br /><br /><hr/>
-      height: {store.infoCharacters.height}  <br /><br /><br />
-      mass: {store.infoCharacters.mass}  <br /><br /><br />
-      hair_color: {store.infoCharacters.hair_color}  <br /><br /><br />
+	  charactername: {store.infoCharacters.name} <br /><br /><hr/>
+      height: {store.infoCharacters.height}  <br /><br /><hr/>
+      mass: {store.infoCharacters.mass}  <br /><br /><hr/>
+      hair_color: {store.infoCharacters.hair_color} <br /><br />
       
 	  </div>
      
