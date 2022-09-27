@@ -1,37 +1,44 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Context } from '../store/appContext';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { useContext, useEffect } from "react";
 
-
-
-
-   export const Planets = () => {
-return (
-<>
-<div className="container py-4 d-flex">
-    
-
-    <div className=" mb-4 bg-light ">
-      <div className="container-fluid">
-        
-        <div className="col-md-8 fs-4"><img src='https://www.gammaracionero.es/wp-content/uploads/2016/09/placeholder-800x600.png' alt="Bootstrap"
-            width={500}
-            height={300} />
-            </div>
-       
+export const Planets = () => {
+  const params = useParams();
+  const { store, actions } = useContext(Context);
+  console.log(store.infoPlanets);
+  useEffect(() => {
+    if (params.theid) {
+      actions.verInfoPlanets(params.theid);
+    }
+  }, [params.theid]);
+  return (
+    <div className="d-flex m-2 justify-content-center">
+      <img
+        style={{ width: "240px", height: "300px" }}
+        src={
+          "https://starwars-visualguide.com/assets/img/planets/" +
+          params.theid +
+          ".jpg"
+        }
+      />
+      <div
+        className="alert alert-warning"
+        style={{ width: "500px", height: "300px" }}
+        role="alert"
+      >
+        <b>Name:</b> {store.infoPlanets.name} <br />
+        <br />
+        <hr />
+        <b>Gravity:</b> {store.infoPlanets.gravity} <br />
+        <br />
+        <hr />
+        <b>Terrain:</b> {store.infoPlanets.terrain} <br />
+        <br />
+        <hr />
+        <b>Population:</b> {store.infoPlanets.population} <br />
+        <br />
       </div>
     </div>
-    <div className='m-5 justify-content-center'>
-    <div className='m-5 justify-content-center'>
-    <h3>Titulo</h3>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    
-    </p>
-    </div>
-
-  </div>
-  </div>
-</>
-)
-}
+  );
+};

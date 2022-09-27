@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import { Context } from "../store/appContext";
-import { BsXCircle} from "react-icons/bs";
+import { BsXCircle } from "react-icons/bs";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -27,15 +27,18 @@ export const Navbar = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Favoritos 
+          Favoritos
         </button>
         <ul className=" btn btn-outline-primary dropdown-menu">
           {store.favoritos.map((element, i) => {
             return (
               <li key={i}>
-                {element.name} 
-                <button  onClick={()=> actions.removeFav(i)}>
-                  <BsXCircle/>
+                {element.name}
+                <button
+                  onClick={() => actions.removeFav(i)}
+                  className="float-right"
+                >
+                  <BsXCircle />
                 </button>
               </li>
             );

@@ -1,12 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BsHeart } from "react-icons/bs";
-import { Context } from "../store/appContext";
-import { useContext } from "react";
 
 
 export const Card = (props) => {
-  const { store, actions } = useContext(Context);
+  
   return (
     <div className="card mx-3" style={{ width: "18rem" }}>
       <img
@@ -19,9 +17,8 @@ export const Card = (props) => {
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">
-          Genre: Male <br />
-          Hair Color: {store.infoCharacters.hair_color}<br />
-          Eye Color: blue <br />
+          <b>Name:</b> 
+          <hr />
         </p>
         <div className="d-flex justify-content-between pb-2 ">
           <Link
@@ -36,7 +33,8 @@ export const Card = (props) => {
           </Link>
           <button
             onClick={() => actions.addFav({ id: props.id, name: props.name })}
-            className="btn btn-outline-warning">
+            className="btn btn-outline-warning"
+          >
             <BsHeart color="orange" />
           </button>
         </div>

@@ -1,18 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      demo: [
-        {
-          title: "FIRST",
-          background: "white",
-          initial: "white",
-        },
-        {
-          title: "SECOND",
-          background: "white",
-          initial: "white",
-        },
-      ],
       characters: [],
       planets: [],
       infoCharacters: [],
@@ -27,8 +15,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ favoritos: aux });
       },
       removeFav: (index) => {
-        let aux = getStore().favoritos
-        let x = aux.filter((element, i) => i != index)
+        let aux = getStore().favoritos;
+        let x = aux.filter((element, i) => i != index);
         setStore({ favoritos: x });
       },
 
@@ -43,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       verInfoPlanets: (id) => {
         fetch("https://www.swapi.tech/api/planets/" + id)
           .then((resp) => resp.json())
-          .then((datos) => setStore({ infoPlanets: datos.results.properties }))
+          .then((datos) => setStore({ infoPlanets: datos.result.properties }))
           .catch((error) => console.log(error));
       },
 
