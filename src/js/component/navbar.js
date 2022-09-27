@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+  console.log(store.favoritos)
+
   return (
     <nav className="navbar navbar-light bg-light mb-3">
       <Link to="/">
@@ -14,13 +19,38 @@ export const Navbar = () => {
           />
         </span>
       </Link>
-      <div className="ml-auto">
-        <Link to="/demo">
-          <button className="btn btn-primary mx-5">
-            Favorites
-          </button>
-        </Link>
+      <div className="dropdown my-2">
+        <button
+          className="btn btn-outline-primary"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Favoritos
+        </button>
+        <ul className=" btn btn-outline-primary dropdown-menu">
+         {store.favoritos.map ((element,i)=>{
+          return (
+            <li key={i}>
+            {element.name}
+            <button onclick={()=> actions.removeFav(i)}>
+              x
+            </button>
+            
+            </li>
+          );
+
+         })}
+         
+        </ul>
       </div>
+      {/* <div className="ml-auto">
+        
+          <button className="btn btn-primary mx-5">
+           {store.favoritos.map((element,i))}
+          
+        </Link>
+      </div> */}
     </nav>
   );
 };
