@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
-  console.log(store.favoritos)
+  console.log(store.favoritos);
 
   return (
     <nav className="navbar navbar-light bg-light mb-3">
@@ -21,7 +21,7 @@ export const Navbar = () => {
       </Link>
       <div className="dropdown my-2">
         <button
-          className="btn btn-outline-primary"
+          className="btn btn-outline-primary mx-5"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
@@ -29,19 +29,16 @@ export const Navbar = () => {
           Favoritos
         </button>
         <ul className=" btn btn-outline-primary dropdown-menu">
-         {store.favoritos.map ((element,i)=>{
-          return (
-            <li key={i}>
-            {element.name}
-            <button onclick={()=> actions.removeFav(i)}>
-              x
-            </button>
-            
-            </li>
-          );
-
-         })}
-         
+          {store.favoritos.map((element, i) => {
+            return (
+              <li key={i}>
+                {element.name}
+                <button onclick={()=> actions.removeFav(i)}>
+                  x
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </div>
       {/* <div className="ml-auto">
