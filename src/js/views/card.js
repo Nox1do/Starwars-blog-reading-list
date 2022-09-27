@@ -33,7 +33,7 @@ export const Card = (props) => {
           </Link>
           <button
             onClick={() => actions.addFav({ id: props.id, name: props.name })}
-            className="btn btn-outline-warning"
+            className="btn btn-outline-warning dropdown-item liS d-flex justify-content-between"
           >
             <BsHeart color="orange" />
           </button>
