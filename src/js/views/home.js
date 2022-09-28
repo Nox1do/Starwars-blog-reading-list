@@ -36,7 +36,7 @@ useEffect(()=> {
 
 return (
   <> 
-  <h1 className="mx-3" style={{ color: "red" }}>Characters</h1>
+  <h1 className="mx-3" >Characters</h1>
   <div className=" row flex-row flex-nowrap overflow-scroll mx-2 py-2">    
   {store.characters.map((item, index) => {
               return (
@@ -47,7 +47,7 @@ return (
 	
              
   
-    <h1 className="mx-3" style={{ color: "red" }}>Planets</h1>
+    <h1 className="mx-3">Planets</h1>
   <div className=" row flex-row flex-nowrap overflow-scroll mx-2">
   {store.planets.map((item, i) => {
               return (

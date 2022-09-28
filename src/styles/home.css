@@ -1,0 +1,31 @@
+body {
+    background-image: url('https://media.giphy.com/media/1ylebTFyDHaa46IDgO/giphy.gif');
+  }
+
+  .card {
+    border: 1px dashed black;
+    
+    color: rgb(247, 185, 16);
+  }
+  
+  img {
+    border-radius: 10%;
+    border: 1px dashed black;
+    
+  }
+  .img-sw {
+    width: 80px;
+    height: 60px;
+    border: none;
+  }
+
+  h1 {
+    color : rgb(235, 173, 3);
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    
+  }
+  .btn-borrar {
+    border:none;
+    background-color: none;
+  }

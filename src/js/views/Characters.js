@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 export const Characters = (type) => {
   const params = useParams();
   const { store, actions } = useContext(Context);
-  console.log(store.infoCharacters);
+  
   useEffect(() => {
     if (params.theid) {
       actions.verInfoPersonajes(params.theid);

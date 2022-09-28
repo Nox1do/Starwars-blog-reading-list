@@ -9,7 +9,7 @@ export const Card = (props) => {
 
   return (
     <div className="card mx-3" style={{ width: "18rem" }}>
-      <img
+      <img 
         src={`https://starwars-visualguide.com/assets/img/${
           props.type === "planets" ? `planets` : `characters`
         }/${props.id}.jpg`}
@@ -33,7 +33,7 @@ export const Card = (props) => {
           </Link>
           <button
             onClick={() => actions.addFav({ id: props.id, name: props.name })}
-            className="btn btn-outline-warning dropdown-item liS d-flex justify-content-between"
+            className="btn btn-outline-warning"
           >
             <BsHeart color="orange" />
           </button>

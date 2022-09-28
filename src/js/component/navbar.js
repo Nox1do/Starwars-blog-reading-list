@@ -12,7 +12,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-light bg-light mb-3">
       <Link to="/">
         <span className="navbar-brand mx-4 h1">
-          <img
+          <img className="img-sw"
             src="https://www.kindpng.com/picc/m/27-270569_transparent-star-wars-logo-png-star-wars-png.png"
             alt="Bootstrap"
             width={50}
@@ -32,10 +32,10 @@ export const Navbar = () => {
         <ul className=" btn btn-outline-primary dropdown-menu">
           {store.favoritos.map((element, i) => {
             return (
-              <li key={i}>
-                {element.name} 
+              <li className="d-flex justify-content-between" key={i}>
+                <span>{element.name}</span>
                 <button  onClick={()=> actions.removeFav(i)}>
-                  <BsXCircle/>
+                <i class="fa fa-minus-circle" aria-hidden="true"></i>
                 </button>
               </li>
             );
